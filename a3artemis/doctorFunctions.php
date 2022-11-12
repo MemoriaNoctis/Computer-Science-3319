@@ -19,18 +19,22 @@
         include 'connectdb.php';
         ?>
 
+        <!--
+            List all the information about the doctors.  User can order the data by Last Name OR by Birthdate.  For each of these 2 fields (Last Name or Birthdate)  user may either order them in ascending or descending order.
+        -->
+
         <h2>List all doctors</h2>
         <form action="getDoctors.php" method="post">
             List doctors by:
             <fieldset id="list by">
-                <input type="radio" name="list by" value="lastname">Last Name<br>
-                <input type="radio" name="list by" value="birthdate">Birthdate<br>
+                <input type="radio" name="listby" value="lastname">Last Name<br>
+                <input type="radio" name="listby" value="birthdate">Birthdate<br>
             </fieldset>
             
             <br>Order results by:
             <fieldset id="order by">
-                <input type="radio" name="order by" value="ascending">Ascending<br>
-                <input type="radio" name="order by" value="descending">Descending<br>
+                <input type="radio" name="orderby" value="ASC">Ascending<br>
+                <input type="radio" name="orderby" value="DESC">Descending<br>
             </fieldset>
 
             <input type="submit" value="Submit">
