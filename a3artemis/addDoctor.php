@@ -21,9 +21,18 @@
 
             $hosValidQuery = 'SELECT hoscode FROM hospital WHERE hoscode = "' . $hosWorksAt . '"';
             $hosValid = mysqli_query($connection,$hosValidQuery);
+            while ($row=mysqli_fetch_assoc($hosValid)) {
+                echo $row["hoscode"];
+            }
+            echo '<br>';
 
             $licenseNumExistsQuery = 'SELECT licensenum FROM doctor WHERE licensenum = "' . $licenseNum . '"';
             $licenseNumExists = mysqli_query($connection,$licenseNumExistsQuery);
+
+            while ($row=mysqli_fetch_assoc($licenseNumExists)) {
+                echo $row["licensenum"];
+            }
+            echo '<br>';
 
             $query = 'INSERT INTO doctor VALUES ("' . $licenseNum . '", "' . $firstName . '", "' . $lastName . '", "' . $licenseDate . '", "' . $birthdate . '", "' . $hosWorksAt . '", "' . $speciality . '")';
 
@@ -37,15 +46,9 @@
             
             if (!fnmatch("[A-Z][A-Z][0-9][0-9]", $licenseNum) || !fnmatch("[A-Z][A-Z][A-Z]", $hosWorksAt)){
                 echo "Error: invalid license number (2 capital letters followed by 2 numbers) and/or invalid hospital code (3 capital letters).";
-            } else if (mysql_num_rows($hosValid) == 0){
-                while ($row=mysqli_fetch_assoc($hosValid)) {
-                    echo $row["hoscode"];
-                }
+            } elseif (!$hosValid){
                 echo "Error: hospital of employment does not exist.";
-            } else if (mysql_num_rows($licenseNumExists) > 0){
-                while ($row=mysqli_fetch_assoc($licenseNumExists)) {
-                    echo $row["licensenum"];
-                }
+            } elseif ($licenseNumExists){
                 echo "Error: doctor's license number is already exists in the database.";
             } else{
                 if (!mysqli_query($connection, $query)) {
