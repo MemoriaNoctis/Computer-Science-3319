@@ -1,3 +1,11 @@
+<!--   
+    File: getDoctors.php
+
+    Programmer Name: 85
+
+    Description: display all doctors in a chosen speciality. 
+-->
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -16,7 +24,6 @@
             <?php
                 $whichSpeciality = $_POST["speciality"];
                 $query = 'SELECT * FROM doctor WHERE speciality = "' . $whichSpeciality . '"';
-                echo $query;
                 
                 $result=mysqli_query($connection,$query);
                 if (!$result) {
@@ -25,6 +32,7 @@
                 while ($row=mysqli_fetch_assoc($result)) {
                     echo '<li>';
                     echo $row["lastname"];
+                    echo "<br>";
                     echo $row["speciality"];
                 }
                 mysqli_free_result($result);

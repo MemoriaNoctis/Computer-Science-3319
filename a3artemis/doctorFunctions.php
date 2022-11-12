@@ -55,13 +55,14 @@
         </form>
 
         <h2>Insert a new doctor</h2>
-        <form action="addNewDoctor.php" method="post">
+        <form action="addDoctor.php" method="post">
             License Number: <input type="text" name="licensenum"><br>
             First Name: <input type="text" name="firstname"><br>
             Last Name: <input type="text" name="lastname"><br>
             License date: <input type="date" name="licensedate"><br>
             Birthdate: <input type="date" name="birthdate"><br>
-            speciality: <input type="text" name="speciality"><br>
+            Hospital of employment: <input type="text" name="hosworksat"><br>
+            Speciality: <input type="text" name="speciality"><br>
             <input type="submit" value="Add New Doctor"><br>
 
         </form>
