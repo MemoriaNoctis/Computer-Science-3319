@@ -18,20 +18,30 @@
         ?>
         <h1>List of all doctors in the database</h1>
 
-        <?php
-            $listBy = $_POST["listby"]
-            $orderBy = $_POST["orderby"]
-            $query = 'SELECT * FROM doctor ORDER BY ' . $listBy . $orderBy;
+        <ol>
+            <?php
+                $listBy = $_POST["listby"];
+                $orderBy = $_POST["orderby"];
+                $query = 'SELECT * FROM doctor ORDER BY ' . $listBy . $orderBy;
 
-            $result = mysqli_query($connection, $query);
+                $result = mysqli_query($connection, $query);
 
-            if (!$result) {
-                die("database query failed.");
-            }
+                if (!$result) {
+                    die("database query failed.");
+                }
 
-            
+                while ($row=mysqli_fetch_assoc($result)){
+                    echo '<li>';
+                    echo $row["lastname"];
+                    echo $row["birthdate"];
+                }
 
-        ?>
+                mysqli_free_result($result);
 
+            ?>
+
+        </ol>
+
+        
     </body>
 </html>
