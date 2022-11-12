@@ -40,14 +40,18 @@
             <input type="submit" value="Submit">
 
         </form>
+
+        <!--
+            User can select one of the specialties to list all the doctor information about just doctors with this specialty.
+        -->
         
         <h2>List doctors in one speciality</h2>
-        <form action="getDoctorsInSpecialty.php" method="post">
+        <form action="getSpecialityData.php" method="post">
             <?php 
-            include 'getSpecialties.php';
+            include 'getSpeciality.php';
             ?>
 
-            <input type="submit" value="Submit">
+            <input type="submit" value="Get Doctors in Speciality">
         </form>
 
         <h2>Insert a new doctor</h2>

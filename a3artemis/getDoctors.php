@@ -10,7 +10,7 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>List all Doctors - Hospital Database</title>
+        <title>List all Doctors</title>
     </head>
     <body>
         <?php
