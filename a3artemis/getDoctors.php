@@ -22,8 +22,8 @@
             <?php
                 $listBy = $_POST["listby"];
                 $orderBy = $_POST["orderby"];
-                $query = 'SELECT * FROM doctor ORDER BY ' . $listBy . $orderBy;
-
+                $query = 'SELECT * FROM doctor ORDER BY ' . $listBy . ' ' .  $orderBy;
+			
                 $result = mysqli_query($connection, $query);
 
                 if (!$result) {
