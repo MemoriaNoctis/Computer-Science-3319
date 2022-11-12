@@ -35,13 +35,11 @@
             echo '<br>';
 
             
-            if (!fnmatch("[A-Z][A-Z][0-9][0-9]", $licenseNum)){
-                echo "Error: invalid license number (2 capital letters followed by 2 numbers).";
-            } else if (!fnmatch("[A-Z][A-Z][A-Z]", $hosWorksAt)){
-                echo "Error: invalid hospital code (3 capital letters).";
-            } else if (!$hosValid){
+            if (!fnmatch("[A-Z][A-Z][0-9][0-9]", $licenseNum) || !fnmatch("[A-Z][A-Z][A-Z]", $hosWorksAt)){
+                echo "Error: invalid license number (2 capital letters followed by 2 numbers) and/or invalid hospital code (3 capital letters).";
+            } else if (mysql_num_rows($hosValid) == 0){
                 echo "Error: hospital of employment does not exist.";
-            } else if ($licenseNumExists){
+            } else if (mysql_num_rows($licenseNumExists) > 0){
                 echo "Error: doctor's license number is already exists in the database.";
             } else{
                 if (!mysqli_query($connection, $query)) {
