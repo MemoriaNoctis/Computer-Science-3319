@@ -24,12 +24,10 @@
             $whichPatient = $_POST["patients"];
 
             $looksAfterQuery = 'SELECT * FROM looksafter WHERE licensenum = "' . $whichDoctor . '" AND ohipnum = "' . $whichPatient . '"';
-            $looksAfterResult = mysqli_query($connection,$looksAfterQuery);
-
-            echo $looksAfterQuery;
+            $looksAfterResult = mysqli_query($connection,$looksAfterQuery);;
 
             if (!empty($row = mysqli_fetch_assoc($looksAfterResult))){
-                echo "Error: Patient is already assigned to this doctor."
+                echo "Error: Patient is already assigned to this doctor.";
             } else{
                 $query = 'INSERT INTO looksafter VALUES ("' . $whichDoctor . '", "' . $whichPatient . '")';
                 $result = mysqli_query($connection, $query);

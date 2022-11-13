@@ -92,11 +92,16 @@
             <input type="submit" value="Assign Patient to Doctor">
         </form>
         
-
+        <!-- 
+            Retrieves the first name, last name, and ohip number of any patient treated by a selected doctor.
+        -->
         <h2>See all patients of a doctor</h2>
-        <?php
-        Include "getPatients.php"
-        ?>
+        <form action="getPatients.php" method="post">
+            <?php
+                include 'getDoctorData.php'
+            ?>
+            <input type="submit" value="See Patients">
+        </form>
         
         <?php
         mysqli_close($connection);

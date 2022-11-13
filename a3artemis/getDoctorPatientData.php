@@ -29,7 +29,7 @@
     }
     echo "</fieldset>";
 
-    echo "Patient:";
+    echo "<br>Patient:";
     echo '<fieldset id="patients">';
     while ($row = mysqli_fetch_assoc($patientResult)) {
         echo '<input type="radio" name="patients" value="';
