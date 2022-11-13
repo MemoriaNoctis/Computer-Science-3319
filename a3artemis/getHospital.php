@@ -25,8 +25,7 @@
             $result = mysqli_query($connection,$query);
             
             //Find head doctor of hospital
-            $headDocQuery = 'SELECT firstname, lastname FROM hospital, doctor WHERE hoscode = "' . $whichHospital . '" AND headdoc = licensenum;
-            ';
+            $headDocQuery = 'SELECT firstname, lastname FROM hospital, doctor WHERE hoscode = "' . $whichHospital . '" AND headdoc = licensenum';
             $headDocResult = mysqli_query($connection, $headDocQuery);
 
             //Find all doctors working at this hospital

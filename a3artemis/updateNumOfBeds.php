@@ -16,13 +16,13 @@
     <body>
         <?php
             include 'connectdb.php';
-            include 'getHospital.php'
+            include 'getHospital.php';
         ?>
 
         <?php
             $newNumBeds = $_POST["newNumBeds"];
-            $query = 'UPDATE hospital SET numofbed = "' . $newNumBeds . '" WHERE hoscode = "' . $whichHospital . '";'
-
+            $query = 'UPDATE hospital SET numofbed = "' . $newNumBeds . '" WHERE hoscode = "' . $whichHospital . '"';
+            echo $whichHospital;
             echo $query;
 
             $result = mysqli_query($connection, $query);
