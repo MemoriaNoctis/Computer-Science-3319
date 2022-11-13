@@ -32,8 +32,7 @@
 
                 while ($row=mysqli_fetch_assoc($result)){
                     echo '<li>';
-                    echo $row["lastname"];
-                    echo $row["birthdate"];
+                    echo $row["lastname"]; . ", " . $row["birthdate"];
                 }
 
                 mysqli_free_result($result);
@@ -41,6 +40,9 @@
             ?>
 
         </ol>
+
+        <br><a href="doctorFunctions.php">Return to accessing doctor information</a> 
+
 
         
     </body>

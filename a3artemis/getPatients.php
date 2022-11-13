@@ -44,6 +44,8 @@
             ?>
 
         </ol>
+        <br><a href="doctorFunctions.php">Return to accessing doctor information</a>
+
         
     </body>
 </html>

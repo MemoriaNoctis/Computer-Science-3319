@@ -36,12 +36,16 @@
         <a href="doctorFunctions.php">View and change doctor information</a>
 
         <h2>View information about a hospital</h2>
-        <?php
-        Include 'getHospital.php'
-        ?>
+        <form action="getHospital.php" method="post">
+            <?php 
+                include 'getHospitalData.php';
+            ?>
+
+            <input type="submit" value="View Information">
+        </form>
 
         <?php
-        mysqli_close($connection);
+            mysqli_close($connection);
         ?>
         
     </body>
