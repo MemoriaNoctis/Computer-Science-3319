@@ -73,10 +73,12 @@
         <!--
             Delete an existing doctor, prompting user for the license number corresponding to the doctor. 
         -->
-        <h2>Remove a doctor</h2>
-        <form action="removeDoctor.php" method="post">
-            License Number: <input type="text" name="licensenum"><br>
-            <input type="submit" value="Remove Doctor"><br>
+        <h2>Remove an existing doctor from the database</h2>
+        <form action="removeDoctor.php" method="post" onsubmit="return confirm('Are you sure you want to delete this doctor from the database?');">>
+            <?php
+            include 'getDoctorData.php'
+            ?>
+            <input type="submit" value="Delete doctor">
         </form>
 
         <h2>Assign a doctor to a patient</h2>
