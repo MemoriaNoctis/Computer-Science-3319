@@ -1,3 +1,12 @@
+<!--   
+    File: removeDoctor.php
+
+    Programmer Name: 85
+
+    Description: processes the removal of a selected doctor from the database. Considers if the selected doctor is a head doctor or has patients, in which case the deletion cannot take place.
+
+-->
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -21,9 +30,7 @@
             $patientQuery = 'SELECT * FROM looksafter WHERE licensenum = "' . $whichProf . '"';
             $patientResult = mysqli_query($connection, $patientQuery);
 
-            echo $headDocQuery; echo "<br>"; echo $patientQuery;
-
-            if (!empty($row = mysqli_fetch_assoc($patientResult)) || empty($row = mysqli_fetch_assoc($headDocResult))){
+            if (!empty($row = mysqli_fetch_assoc($patientResult)) || !empty($row = mysqli_fetch_assoc($headDocResult))){
                 echo "Error: cannot delete doctors assigned to patients and/or doctors who are the head doctor of a hospital.";
             } else{
                 $query = 'DELETE FROM doctor WHERE licensenum = "' . $whichProf . '"';
@@ -32,8 +39,10 @@
                 if (!$result) {
                     die("Error: delete doctor failed-- ".mysqli_error($connection));
                 }
-                echo "Professor deleted!";
+                echo "<h1>Doctor deleted from the database.</h1>";
             }
+
+            echo '<br><a href="doctorFunctions.php">Return to accessing doctor information</a> <br>';
             
         ?>
 

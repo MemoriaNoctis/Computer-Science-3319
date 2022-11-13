@@ -16,7 +16,7 @@
 
     <body>
         <?php
-        include 'connectdb.php';
+            include 'connectdb.php';
         ?>
 
         <!--
@@ -48,7 +48,7 @@
         <h2>List doctors in one speciality</h2>
         <form action="getSpecialityData.php" method="post">
             <?php 
-            include 'getSpeciality.php';
+                include 'getSpeciality.php';
             ?>
 
             <input type="submit" value="Get Doctors in Speciality">
@@ -76,15 +76,21 @@
         <h2>Remove an existing doctor from the database</h2>
         <form action="removeDoctor.php" method="post" onsubmit="return confirm('Are you sure you want to delete this doctor from the database?');">
             <?php
-            include 'getDoctorData.php'
+                include 'getDoctorData.php'
             ?>
             <input type="submit" value="Delete doctor">
         </form>
 
+        <!--
+            Assigns a doctor to a patient unless the relationship already exists.  
+        -->
         <h2>Assign a doctor to a patient</h2>
-        <?php
-        Include "addNewLooksafter.php"
-        ?>
+        <form action="addLooksAfter.php" method="post">
+            <?php
+                include "getDoctorPatientData.php"
+            ?>
+        </form>
+        
 
         <h2>See all patients of a doctor</h2>
         <?php
