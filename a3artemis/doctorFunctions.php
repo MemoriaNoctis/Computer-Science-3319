@@ -74,7 +74,7 @@
             Delete an existing doctor, prompting user for the license number corresponding to the doctor. 
         -->
         <h2>Remove an existing doctor from the database</h2>
-        <form action="removeDoctor.php" method="post" onsubmit="return confirm('Are you sure you want to delete this doctor from the database?');">>
+        <form action="removeDoctor.php" method="post" onsubmit="return confirm('Are you sure you want to delete this doctor from the database?');">
             <?php
             include 'getDoctorData.php'
             ?>

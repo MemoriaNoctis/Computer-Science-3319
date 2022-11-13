@@ -30,7 +30,7 @@
                 $query = 'DELETE FROM doctor WHERE licensenum = "' . $whichProf . '"';
                 $result = mysqli_query($connection, $query);
 
-                if (!$result3) {
+                if (!$result) {
                     die("Error: delete doctor failed-- ".mysqli_error($connection));
                 }
                 echo "Professor deleted!";
