@@ -60,6 +60,7 @@
             }
 
             mysqli_free_result($result);
+            mysqli_close($connection);
         ?>
         <br><br><a href="index.php">Return to home page</a>
 

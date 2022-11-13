@@ -43,6 +43,8 @@
             }
 
             echo '<br><a href="doctorFunctions.php">Return to accessing doctor information</a> <br>';
+            mysqli_free_result($result);
+            mysqli_close($connection);
             
         ?>
 

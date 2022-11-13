@@ -46,6 +46,7 @@
             }
             echo "</table>";
             mysqli_free_result($result);
+            mysqli_close($connection);
         ?>
         <br><a href="doctorFunctions.php">Return to accessing doctor information</a> 
     </body>

@@ -29,6 +29,7 @@
                 die("Error: update failed-- " . mysqli_error($connection));
             }
             echo "<h2>Number of hospital beds updated</h2>";
+            mysqli_free_result($result);
             mysqli_close($connection);
         ?>
 
