@@ -54,6 +54,9 @@
             <input type="submit" value="Get Doctors in Speciality">
         </form>
 
+        <!--
+            Insert a new doctor, prompting user for the necessary data. 
+        -->
         <h2>Insert a new doctor</h2>
         <form action="addDoctor.php" method="post">
             License Number: <input type="text" name="licensenum" required><br>
@@ -67,6 +70,9 @@
 
         </form>
         
+        <!--
+            Delete an existing doctor, prompting user for the license number corresponding to the doctor. 
+        -->
         <h2>Remove a doctor</h2>
         <form action="removeDoctor.php" method="post">
             License Number: <input type="text" name="licensenum"><br>

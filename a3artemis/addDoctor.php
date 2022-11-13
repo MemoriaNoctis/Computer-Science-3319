@@ -1,3 +1,12 @@
+<!--   
+    File: addDoctor.php
+
+    Programmer Name: 85
+
+    Description: takes parameters entered from doctorFunctions.php and inserts a new doctor into the database, provided that all parameters are valid.
+
+-->
+
 <!DOCTYPE html>
 <html>
     <head>
