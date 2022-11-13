@@ -13,7 +13,6 @@
     if (!$result) {
             die("databases query failed.");
         }
-    echo "<h3>Select doctor to delete: </h3></br>";
     while ($row = mysqli_fetch_assoc($result)) {
             echo '<input type="radio" name="doctors" value="';
             echo $row["licensenum"];

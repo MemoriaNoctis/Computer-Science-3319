@@ -74,6 +74,7 @@
             Delete an existing doctor, prompting user for the license number corresponding to the doctor. 
         -->
         <h2>Remove an existing doctor from the database</h2>
+        <h3>Select doctor to delete: </h3></br>
         <form action="removeDoctor.php" method="post" onsubmit="return confirm('Are you sure you want to delete this doctor from the database?');">
             <?php
                 include 'getDoctorData.php'
@@ -85,6 +86,7 @@
             Assigns a doctor to a patient unless the relationship already exists.  
         -->
         <h2>Assign a doctor to a patient</h2>
+        <h3>Select doctor: </h3></br>
         <form action="addLooksAfter.php" method="post">
             <?php
                 include "getDoctorPatientData.php"
