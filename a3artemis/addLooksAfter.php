@@ -40,7 +40,7 @@
                 echo "<h1>Doctor has been assigned to the patient.</h1>";
             }
 
-            echo '<br><a href="doctorFunctions.php">Return to accessing doctor information</a> <br>'; s
+            echo '<br><a href="doctorFunctions.php">Return to accessing doctor information</a> <br>'; 
 
         ?>
     </body>

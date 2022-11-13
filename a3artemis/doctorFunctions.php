@@ -78,7 +78,7 @@
             <?php
                 include 'getDoctorData.php'
             ?>
-            <input type="submit" value="Delete doctor">
+            <input type="submit" value="Delete Doctor">
         </form>
 
         <!--
@@ -89,6 +89,7 @@
             <?php
                 include "getDoctorPatientData.php"
             ?>
+            <input type="submit" value="Assign Patient to Doctor">
         </form>
         
 
