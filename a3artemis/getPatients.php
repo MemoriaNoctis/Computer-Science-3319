@@ -29,13 +29,7 @@
             if (!$result) {
                 die("database query failed.");
             }
-
-            while ($row=mysqli_fetch_assoc($result)){
-                echo $row["firstname"];
-                echo $row["lastname"];
-                echo $row["ohipnum"];
-            }
-
+            
             echo '<table>
             <tr>
                 <th style="padding:10px">First Name</th>
