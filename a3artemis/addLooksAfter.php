@@ -38,7 +38,6 @@
                 echo "<h1>Doctor has been assigned to the patient.</h1>";
             }
 
-            mysqli_free_result($result);
             mysqli_close($connection);
 
             echo '<br><a href="doctorFunctions.php">Return to accessing doctor information</a> <br>'; 
