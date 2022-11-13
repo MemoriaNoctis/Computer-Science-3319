@@ -16,7 +16,7 @@
     while ($row = mysqli_fetch_assoc($result)) {
             echo '<input type="radio" name="hospitals" value="';
             echo $row["hoscode"];
-            echo '">' . $row["hosname"] . "<br>";
+            echo '">' . $row["hosname"] . ", " . $row["city"] . ", " . $row["prov"] . "<br>";
     }
     mysqli_free_result($result);
 ?>

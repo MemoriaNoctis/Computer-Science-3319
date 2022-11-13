@@ -104,7 +104,7 @@
             <input type="submit" value="See Patients">
         </form>
 
-        <br><a href="index.php">Return to accessing home page</a>
+        <br><a href="index.php">Return to home page</a>
 
         
         <?php
