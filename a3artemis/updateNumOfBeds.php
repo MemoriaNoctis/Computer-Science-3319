@@ -11,19 +11,17 @@
 <html>
     <head>
         <meta charset = "utf-8">
-        <title>Hospital data</title>
+        <title>Update hospital bed numbers</title>
     </head>
     <body>
         <?php
             include 'connectdb.php';
-            include 'getHospital.php';
         ?>
 
         <?php
             $newNumBeds = $_POST["newNumBeds"];
+            $whichHospital = $_POST["hospitals"];
             $query = 'UPDATE hospital SET numofbed = "' . $newNumBeds . '" WHERE hoscode = "' . $whichHospital . '"';
-            echo $whichHospital;
-            echo $query;
 
             $result = mysqli_query($connection, $query);
 
@@ -32,8 +30,9 @@
             }
             echo "<h2>Number of hospital beds updated</h2>";
             mysqli_close($connection);
-            echo '<br><a href="getHospital.php">Return to hospital information</a> <br>';
         ?>
+
+        <br><br><a href="index.php">Return to home page</a>
         
     </body>
 </html>

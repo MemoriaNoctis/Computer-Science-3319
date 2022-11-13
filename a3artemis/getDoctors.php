@@ -18,32 +18,40 @@
         ?>
         <h1>List of all doctors in the database</h1>
 
-        <ol>
-            <?php
-                $listBy = $_POST["listby"];
-                $orderBy = $_POST["orderby"];
-                $query = 'SELECT * FROM doctor ORDER BY ' . $listBy . ' ' .  $orderBy;
-			
-                $result = mysqli_query($connection, $query);
+        <?php
+            $listBy = $_POST["listby"];
+            $orderBy = $_POST["orderby"];
+            $query = 'SELECT * FROM doctor ORDER BY ' . $listBy . ' ' .  $orderBy;
+        
+            $result = mysqli_query($connection, $query);
 
-                if (!$result) {
-                    die("database query failed.");
-                }
+            if (!$result) {
+                die("database query failed.");
+            }
 
-                while ($row=mysqli_fetch_assoc($result)){
-                    echo '<li>';
-                    echo $row["lastname"]; . ", " . $row["birthdate"];
-                }
+            echo '<table>
+            <tr>
+                <th style="padding:10px">License Number</th>
+                <th style="padding:10px">First Name</th>
+                <th style="padding:10px">Last Name</th>
+                <th style="padding:10px">License Date</th>
+                <th style="padding:10px">Birthdate</th>
+                <th style="padding:10px">Hospital of Employment</th>
+                <th style="padding:10px">Speciality</th>
+            </tr>';
 
-                mysqli_free_result($result);
 
-            ?>
+            while ($row=mysqli_fetch_assoc($result)){
+                echo '<tr><td>' . $row["licensenum"] . '</td><td>' . $row["firstname"] . '</td><td>' . $row["lastname"] . '</td><td>' . $row["licensedate"] . '</td><td>' . $row["birthdate"] . '</td><td>' . $row["hosworksat"] . '</td><td>' . $row["speciality"] . '</td></tr>';
+            }
+            echo "</table>";
+            mysqli_free_result($result);
 
-        </ol>
+
+        ?>
+
 
         <br><a href="doctorFunctions.php">Return to accessing doctor information</a> 
-
-
         
     </body>
 </html>

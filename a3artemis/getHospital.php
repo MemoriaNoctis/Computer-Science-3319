@@ -61,13 +61,6 @@
 
             mysqli_free_result($result);
         ?>
-        
-        <u>Update the number of beds in this hospital</u>
-        <form action="updateNumOfBeds.php" method="post">
-            Number of Beds: <input type="number" name="newNumBeds">
-            <input type="submit" value="Update">
-        </form>
-
         <br><br><a href="index.php">Return to home page</a>
 
     </body>

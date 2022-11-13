@@ -1,42 +1,24 @@
 <!--   
-    File: getDoctors.php
+    File: getSpecialtyData.php
 
     Programmer Name: 85
 
-    Description: display all doctors in a chosen speciality. 
+    Description: display all specialities contained in the doctor table of the database for user selection.
+
 -->
 
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <title>All doctors in speciality</title>
-    </head>
+<?php
+    $query = "SELECT DISTINCT speciality FROM doctor";
+    $result = mysqli_query($connection,$query);
+    if (!$result) {
+         die("databases query failed.");
+    }
 
-    <body>
-        <?php
-            include 'connectdb.php';
-        ?>
+    while ($row = mysqli_fetch_assoc($result)) {
+        echo '<input type="radio" name="speciality" value="';
+        echo $row["speciality"];
+        echo '">' . $row["speciality"] . "<br>";
+    }
 
-        <h1>All doctors in the chosen speciality</h1>
-
-        <ol>
-            <?php
-                $whichSpeciality = $_POST["speciality"];
-                $query = 'SELECT * FROM doctor WHERE speciality = "' . $whichSpeciality . '"';
-                
-                $result=mysqli_query($connection,$query);
-                if (!$result) {
-                    die("database query failed.");
-                }
-                while ($row=mysqli_fetch_assoc($result)) {
-                    echo '<li>';
-                    echo $row["lastname"];
-                    echo "<br>";
-                    echo $row["speciality"];
-                }
-                mysqli_free_result($result);
-            ?>
-        </ol>
-    </body>
-</html>
+    mysqli_free_result($result);
+?>

@@ -22,7 +22,7 @@
         <!--
             List all the information about the doctors.  User can order the data by Last Name OR by Birthdate.  For each of these 2 fields (Last Name or Birthdate)  user may either order them in ascending or descending order.
         -->
-
+        <h1>Functions to alter and view doctor information</h1>
         <h2>List all doctors</h2>
         <form action="getDoctors.php" method="post">
             List doctors by:
@@ -46,9 +46,9 @@
         -->
         
         <h2>List doctors in one speciality</h2>
-        <form action="getSpecialityData.php" method="post">
+        <form action="getSpeciality.php" method="post">
             <?php 
-                include 'getSpeciality.php';
+                include 'getSpecialityData.php';
             ?>
 
             <input type="submit" value="Get Doctors in Speciality">

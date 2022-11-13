@@ -23,7 +23,7 @@
 
         <h1>Welcome to the Hospital Database</h1>
         <h2>Access information on the doctors</h2>
-        Functions include:
+        <font size = "+1">Functions include:</font>        
         <ul>
             <li>List all information about the doctors</li>
             <li>List all doctors within one speciality</li>
@@ -35,15 +35,29 @@
 
         <a href="doctorFunctions.php">View and change doctor information</a>
 
-        <h2>View information about a hospital</h2>
+        <h2>View and Change information on hospitals</h2>
+
+        <font size = "+1">Select a hospital to view its information</font>
         <form action="getHospital.php" method="post">
             <?php 
                 include 'getHospitalData.php';
             ?>
-
             <input type="submit" value="View Information">
         </form>
 
+        <br><br>
+
+        <font size = "+1">Update the number of beds in a hospital</font>
+        <br>
+        <form action="updateNumOfBeds.php" method="post">
+            Select hospital to update:<br>
+            <?php 
+                include 'getHospitalData.php';
+            ?>
+            <br>
+            Updated number of Beds: <input type="number" name="newNumBeds" required><br>
+            <input type="submit" value="Update">
+        </form>
         <?php
             mysqli_close($connection);
         ?>
