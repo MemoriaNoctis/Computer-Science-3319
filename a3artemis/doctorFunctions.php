@@ -23,89 +23,109 @@
         <!--
             List all the information about the doctors.  User can order the data by Last Name OR by Birthdate.  For each of these 2 fields (Last Name or Birthdate)  user may either order them in ascending or descending order.
         -->
-        <h1>Functions to alter and view doctor information</h1>
+        <h1>Alter and view doctor information</h1>
         <h2>List all doctors</h2>
-        <form action="getDoctors.php" method="post">
-            List doctors by:
-            <fieldset id="list by">
-                <input type="radio" name="listby" value="lastname">Last Name<br>
-                <input type="radio" name="listby" value="birthdate">Birthdate<br>
-            </fieldset>
-            
-            <br>Order results by:
-            <fieldset id="order by">
-                <input type="radio" name="orderby" value="ASC">Ascending<br>
-                <input type="radio" name="orderby" value="DESC">Descending<br>
-            </fieldset>
+        <div class="center">
+            <h3>Choose how to order the results: </h3>
+            <form action="getDoctors.php" method="post">
+                List doctors by:
+                <fieldset id="list by">
+                    <input type="radio" name="listby" value="lastname">Last Name<br>
+                    <input type="radio" name="listby" value="birthdate">Birthdate<br>
+                </fieldset>
+                
+                <br>Order results by:
+                <fieldset id="order by">
+                    <input type="radio" name="orderby" value="ASC">Ascending<br>
+                    <input type="radio" name="orderby" value="DESC">Descending<br>
+                </fieldset>
 
-            <input type="submit" value="Submit">
-
-        </form>
+                <br><input type="submit" value="Submit">
+            </form>
+        </div>        
 
         <!--
             User can select one of the specialties to list all the doctor information about just doctors with this specialty.
         -->
         
         <h2>List doctors in one speciality</h2>
-        <form action="getSpeciality.php" method="post">
-            <?php 
-                include 'getSpecialityData.php';
-            ?>
+        <div class="center">
+            <h3>Choose which speciality to list: </h3> 
+            <form action="getSpeciality.php" method="post">
+                <?php 
+                    include 'getSpecialityData.php';
+                ?>
 
-            <input type="submit" value="Get Doctors in Speciality">
-        </form>
+                <br><input type="submit" value="Get Doctors in Speciality">
+            </form>
+        </div>
 
         <!--
             Insert a new doctor, prompting user for the necessary data. 
         -->
         <h2>Insert a new doctor</h2>
-        <form action="addDoctor.php" method="post">
-            License Number: <input type="text" name="licensenum" required><br>
-            First Name: <input type="text" name="firstname" required><br>
-            Last Name: <input type="text" name="lastname" required><br>
-            License date: <input type="date" name="licensedate" required><br>
-            Birthdate: <input type="date" name="birthdate" required><br>
-            Hospital of employment: <input type="text" name="hosworksat" required><br>
-            Speciality: <input type="text" name="speciality" required><br>
-            <input type="submit" value="Add New Doctor"><br>
+        <div class="center">
+            <h3>Input new doctor's information: </h3>
+            <form action="addDoctor.php" method="post">
+                <label>License Number:</label> <input type="text" name="licensenum" required><br>
+                <label>First Name:</label> <input type="text" name="firstname" required><br>
+                <label>Last Name:</label> <input type="text" name="lastname" required><br>
+                <label>License date:</label> <input type="date" name="licensedate" required><br>
+                <label>Birthdate:</label> <input type="date" name="birthdate" required><br>
+                <label>Hospital of employment:</label> <input type="text" name="hosworksat" required><br>
+                <label>Speciality:</label> <input type="text" name="speciality" required><br>
+                <br><input type="submit" value="Add New Doctor"><br>
 
-        </form>
+            </form>
+        </div>
         
         <!--
             Delete an existing doctor, prompting user for the license number corresponding to the doctor. 
         -->
         <h2>Remove an existing doctor from the database</h2>
-        <h3>Select doctor to delete: </h3>
-        <form action="removeDoctor.php" method="post" onsubmit="return confirm('Are you sure you want to delete this doctor from the database?');">
-            <?php
-                include 'getDoctorData.php'
-            ?>
-            <input type="submit" value="Delete Doctor">
-        </form>
+        <div class="center">
+            <h3>Select doctor to delete: </h3>
+            <form action="removeDoctor.php" method="post" onsubmit="return confirm('Are you sure you want to delete this doctor from the database?');">
+                <?php
+                    include 'getDoctorData.php'
+                ?>
+                <br><input type="submit" value="Delete Doctor">
+            </form>
+        </div>
 
         <!--
             Assigns a doctor to a patient unless the relationship already exists.  
         -->
         <h2>Assign a doctor to a patient</h2>
-        <form action="addLooksAfter.php" method="post">
-            <?php
-                include "getDoctorPatientData.php"
-            ?>
-            <input type="submit" value="Assign Patient to Doctor">
-        </form>
+        
+        <div class="center">
+            <h3>Select doctor and patient to assign: </h3>
+            <form action="addLooksAfter.php" method="post">
+                <?php
+                    include "getDoctorPatientData.php"
+                ?>
+                <br><input type="submit" value="Assign Patient to Doctor">
+            </form>
+        </div>
         
         <!-- 
             Retrieves the first name, last name, and ohip number of any patient treated by a selected doctor.
         -->
         <h2>See all patients of a doctor</h2>
-        <form action="getPatients.php" method="post">
-            <?php
-                include 'getDoctorData.php'
-            ?>
-            <input type="submit" value="See Patients">
-        </form>
+        <div class="center">
+            <h3>Select a doctor to view their patients: </h3>
+            <form action="getPatients.php" method="post">
+                <?php
+                    include 'getDoctorData.php'
+                ?>
+                <br><input type="submit" value="See Patients">
+            </form>
+        </div><br>
 
-        <br><a href="index.php">Return to home page</a>
+        <div class="returnLink">
+            <a href="index.php">Return to home page</a>
+        </div>
+        
 
         
         <?php

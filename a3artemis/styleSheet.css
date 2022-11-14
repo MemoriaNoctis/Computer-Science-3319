@@ -1,3 +1,53 @@
-body{background-color: #F7F7F2;}
-h1 {color: #7F6A93;}
-h2{color: #898878;}
+body{
+    background-color: #F7F7F2;
+}
+h1 {
+    color: #290628;
+    text-align: center;
+}
+
+h2{
+    color: #7F6A93;
+    text-align: center;
+}
+
+h3{
+    color: #898878;
+}
+.center{
+    margin: auto;
+    width: 50%;
+    border: 3px;
+    padding: 10px;
+}
+
+label{
+    display: inline-block;
+    float: left;
+    clear: left;
+    width: 180px;
+    text-align: left; /*Change to right here if you want it close to the inputs*/
+}
+input [type=text], input [type=date] {
+    display: inline-block;
+    float: left;
+}
+input [type=submit]{
+    padding:5px 15px; 
+    background:#F7F7F2; 
+    border:0 none;
+    cursor:pointer;
+    -webkit-border-radius: 5px;
+    border-radius: 5px; 
+}
+
+.returnLink{
+    text-align: right;
+}
+
+fieldset
+{
+  background-color:#F7F7F2;
+  border: none;	
+}
+
