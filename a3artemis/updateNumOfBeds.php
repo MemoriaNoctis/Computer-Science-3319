@@ -12,6 +12,7 @@
     <head>
         <meta charset = "utf-8">
         <title>Update hospital bed numbers</title>
+        <link rel="stylesheet" href="styleSheet.css">
     </head>
     <body>
         <?php

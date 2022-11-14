@@ -12,6 +12,7 @@
     <head>
         <meta charset = "utf-8">
         <title>Assign patient to doctor</title>
+        <link rel="stylesheet" href="styleSheet.css">
     </head>
 
     <body>

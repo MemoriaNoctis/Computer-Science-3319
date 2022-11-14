@@ -12,6 +12,7 @@
     <head>
         <meta charset="utf-8">
         <title>Doctor Functions - Hospital Database</title>
+        <link rel="stylesheet" href="styleSheet.css">
     </head>
 
     <body>

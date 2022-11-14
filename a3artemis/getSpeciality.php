@@ -13,6 +13,7 @@
     <head>
         <meta charset="utf-8">
         <title>All doctors in speciality</title>
+        <link rel="stylesheet" href="styleSheet.css">
     </head>
 
     <body>

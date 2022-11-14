@@ -12,6 +12,7 @@
     <head>
         <meta charset="utf-8">
         <title>Hospital Database</title>
+        <link rel="stylesheet" href="styleSheet.css">
     </head>
 
     <body>
@@ -23,8 +24,8 @@
 
         <h1>Welcome to the Hospital Database</h1>
         <h2>Access information on the doctors</h2>
-        <font size = "+1">Functions include:</font>        
-        <ul>
+        <font size = "+1" class="artichoke">Functions include:</font>        
+        <ul class="artichoke">
             <li>List all information about the doctors</li>
             <li>List all doctors within one speciality</li>
             <li>Insert a new doctor</li>
@@ -37,7 +38,7 @@
 
         <h2>View and Change information on hospitals</h2>
 
-        <font size = "+1">Select a hospital to view its information</font>
+        <font size = "+1" class="artichoke">Select a hospital to view its information</font>
         <form action="getHospital.php" method="post">
             <?php 
                 include 'getHospitalData.php';
@@ -47,7 +48,7 @@
 
         <br><br>
 
-        <font size = "+1">Update the number of beds in a hospital</font>
+        <font size = "+1" class="artichoke">Update the number of beds in a hospital</font>
         <br>
         <form action="updateNumOfBeds.php" method="post">
             Select hospital to update:<br>

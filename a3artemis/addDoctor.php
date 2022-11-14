@@ -12,6 +12,7 @@
     <head>
         <meta charset="utf-8">
         <title>Add new doctor</title>
+        <link rel="stylesheet" href="styleSheet.css">
     </head>
 
     <body>

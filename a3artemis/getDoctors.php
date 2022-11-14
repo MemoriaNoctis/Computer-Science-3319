@@ -11,6 +11,7 @@
     <head>
         <meta charset="utf-8">
         <title>List all Doctors</title>
+        <link rel="stylesheet" href="styleSheet.css">
     </head>
     <body>
         <?php
