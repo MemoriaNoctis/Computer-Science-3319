@@ -41,7 +41,11 @@ input [type=submit]{
     border-radius: 5px; 
 }
 
-.returnLink{
+.link{
+    margin: auto;
+    width: 50%;
+    border: 3px;
+    padding: 10px;
     text-align: right;
 }
 

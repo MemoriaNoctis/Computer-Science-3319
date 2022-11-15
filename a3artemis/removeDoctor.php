@@ -42,11 +42,13 @@
                 }
                 echo "<h1>Doctor deleted from the database.</h1>";
             }
-
-            echo '<br><a href="doctorFunctions.php">Return to accessing doctor information</a> <br>';
             mysqli_close($connection);
-            
         ?>
+
+        <div class="link">
+            <br><a href="doctorFunctions.php">Return to accessing doctor information</a> <br>
+        </div>
+        
 
 
     </body>

@@ -49,8 +49,10 @@
             
         ?>
 
-    
-        <br><a href="doctorFunctions.php">Return to accessing doctor information</a>
+        <div class="link">
+            <br><a href="doctorFunctions.php">Return to accessing doctor information</a>
+        </div>
+        
 
         
     </body>

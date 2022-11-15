@@ -49,6 +49,10 @@
             mysqli_free_result($result);
             mysqli_close($connection);
         ?>
-        <br><a href="doctorFunctions.php">Return to accessing doctor information</a> 
+        
+        <div class="link">
+            <br><a href="doctorFunctions.php">Return to accessing doctor information</a> 
+        </div>
+        
     </body>
 </html>

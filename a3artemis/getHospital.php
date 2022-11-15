@@ -38,6 +38,7 @@
             }
 
             while ($row=mysqli_fetch_assoc($result)){
+                echo '<div class="center">';
                 echo "<h1>" . $row["hosname"] . "</h1>";
                 echo '<font size = "+2"> <b>' . $row["city"] . ", " . $row["prov"] . "</b></font><br><br>";
 
@@ -57,13 +58,18 @@
                     echo $employeeRow["firstname"] . " " . $employeeRow["lastname"];
                 }
                 echo "</ol>";
+                echo '</div>';
                 
             }
 
             mysqli_free_result($result);
             mysqli_close($connection);
         ?>
-        <br><br><a href="index.php">Return to home page</a>
+
+        <div class="link">
+            <br><br><a href="index.php">Return to home page</a>
+        </div>
+        
 
     </body>
 </html>

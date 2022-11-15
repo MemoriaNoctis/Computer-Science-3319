@@ -32,8 +32,11 @@
             echo "<h2>Number of hospital beds updated</h2>";
             mysqli_close($connection);
         ?>
-
-        <br><br><a href="index.php">Return to home page</a>
+        
+        <div class="link">
+            <br><br><a href="index.php">Return to home page</a>
+        </div>
+        
         
     </body>
 </html>

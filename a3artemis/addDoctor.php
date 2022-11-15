@@ -37,19 +37,26 @@
             
             //Checks for valid license number and hospital code entries.
             if (!fnmatch("[A-Z][A-Z][0-9][0-9]", $licenseNum) || (!empty($hosWorksAt) && !fnmatch("[A-Z][A-Z][A-Z]", $hosWorksAt))){
+                echo '<div class="link">';
                 echo '<a href="doctorFunctions.php">Return to accessing doctor information</a> <br>';
+                echo '</div>';
                 echo "Error: invalid license number (2 capital letters followed by 2 numbers) and/or invalid hospital code (3 capital letters).";
             } 
             
             //Checks for duplicate entries and non-existant hospitals.
             else{
                 if (!mysqli_query($connection, $query)) {
+                    echo '<div class="link">';                
                     echo '<a href="doctorFunctions.php">Return to accessing doctor information</a> <br>';
+                    echo '</div>';
                     die("Error: insert failed: " . mysqli_error($connection));
                 }
                 echo "<h2>Doctor added!</h2>";
                 mysqli_close($connection);
+                echo '<div class="link">';
                 echo '<br><a href="doctorFunctions.php">Return to accessing doctor information</a> <br>';
+                echo '</div>';
+                
             }
         ?>
     </body>

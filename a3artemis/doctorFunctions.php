@@ -122,7 +122,7 @@
             </form>
         </div><br>
 
-        <div class="returnLink">
+        <div class="link">
             <a href="index.php">Return to home page</a>
         </div>
         

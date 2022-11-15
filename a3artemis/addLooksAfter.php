@@ -40,8 +40,9 @@
             }
 
             mysqli_close($connection);
-
+            echo '<div class="link">';
             echo '<br><a href="doctorFunctions.php">Return to accessing doctor information</a> <br>'; 
+            echo '</div>';
 
         ?>
     </body>
