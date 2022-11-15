@@ -32,13 +32,13 @@
 
             echo '<table>
             <tr>
-                <th style="padding:10px">License Number</th>
-                <th style="padding:10px">First Name</th>
-                <th style="padding:10px">Last Name</th>
-                <th style="padding:10px">License Date</th>
-                <th style="padding:10px">Birthdate</th>
-                <th style="padding:10px">Hospital of Employment</th>
-                <th style="padding:10px">Speciality</th>
+                <th>License Number</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>License Date</th>
+                <th>Birthdate</th>
+                <th>Hospital of Employment</th>
+                <th>Speciality</th>
             </tr>';
 
 

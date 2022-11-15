@@ -55,3 +55,21 @@ fieldset
   border: none;	
 }
 
+th{
+    padding:10px;
+    color: #898878;
+}
+table{
+    margin: auto;
+    width: 50%;
+    border: 3px;
+    padding: 10px;    
+}
+
+.purple{
+    margin: auto;
+    width: 50%;
+    border: 3px;
+    padding: 10px;
+    color:#7F6A93;
+}

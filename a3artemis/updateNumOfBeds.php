@@ -27,12 +27,14 @@
             $result = mysqli_query($connection, $query);
 
             if (!mysqli_query($connection, $query)) {
+                echo '<div class="center"';
                 die("Error: update failed-- " . mysqli_error($connection));
+                echo '</div>';
             }
             echo "<h2>Number of hospital beds updated</h2>";
             mysqli_close($connection);
         ?>
-        
+
         <div class="link">
             <br><br><a href="index.php">Return to home page</a>
         </div>

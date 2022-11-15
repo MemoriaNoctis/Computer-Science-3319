@@ -32,13 +32,15 @@
             $patientResult = mysqli_query($connection, $patientQuery);
 
             if (!empty($row = mysqli_fetch_assoc($patientResult)) || !empty($row = mysqli_fetch_assoc($headDocResult))){
-                echo "Error: cannot delete doctors assigned to patients and/or doctors who are the head doctor of a hospital.";
+                echo '<p class="center"> Error: cannot delete doctors assigned to patients and/or doctors who are the head doctor of a hospital.</div>';
             } else{
                 $query = 'DELETE FROM doctor WHERE licensenum = "' . $whichProf . '"';
                 $result = mysqli_query($connection, $query);
 
                 if (!$result) {
+                    echo '<div class="center">';
                     die("Error: delete doctor failed-- ".mysqli_error($connection));
+                    echo '</div>';
                 }
                 echo "<h1>Doctor deleted from the database.</h1>";
             }

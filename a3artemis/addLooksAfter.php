@@ -28,13 +28,15 @@
             $looksAfterResult = mysqli_query($connection,$looksAfterQuery);;
 
             if (!empty($row = mysqli_fetch_assoc($looksAfterResult))){
-                echo "Error: Patient is already assigned to this doctor.";
+                echo '<p class="center"> Error: Patient is already assigned to this doctor. </div>';
             } else{
                 $query = 'INSERT INTO looksafter VALUES ("' . $whichDoctor . '", "' . $whichPatient . '")';
                 $result = mysqli_query($connection, $query);
 
                 if (!$result) {
+                    echo '<div class="center"';
                     die("Error: assign doctor to patient failed-- ".mysqli_error($connection));
+                    echo '</div>';
                 }
                 echo "<h1>Doctor has been assigned to the patient.</h1>";
             }

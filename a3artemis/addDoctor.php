@@ -40,7 +40,7 @@
                 echo '<div class="link">';
                 echo '<a href="doctorFunctions.php">Return to accessing doctor information</a> <br>';
                 echo '</div>';
-                echo "Error: invalid license number (2 capital letters followed by 2 numbers) and/or invalid hospital code (3 capital letters).";
+                echo '<p class="center"> Error: invalid license number (2 capital letters followed by 2 numbers) and/or invalid hospital code (3 capital letters).</div>';
             } 
             
             //Checks for duplicate entries and non-existant hospitals.
@@ -49,7 +49,9 @@
                     echo '<div class="link">';                
                     echo '<a href="doctorFunctions.php">Return to accessing doctor information</a> <br>';
                     echo '</div>';
+                    echo '<div class="center">';
                     die("Error: insert failed: " . mysqli_error($connection));
+                    echo '</div>';
                 }
                 echo "<h2>Doctor added!</h2>";
                 mysqli_close($connection);
