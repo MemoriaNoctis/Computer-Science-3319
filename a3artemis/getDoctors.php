@@ -30,6 +30,8 @@
                 die("database query failed.");
             }
 
+            //create table to display results
+
             echo '<table>
             <tr>
                 <th>License Number</th>

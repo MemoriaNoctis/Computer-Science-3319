@@ -27,6 +27,7 @@
             $looksAfterQuery = 'SELECT * FROM looksafter WHERE licensenum = "' . $whichDoctor . '" AND ohipnum = "' . $whichPatient . '"';
             $looksAfterResult = mysqli_query($connection,$looksAfterQuery);;
 
+            //don't allow assignment if the doctor is already assigned to the patient
             if (!empty($row = mysqli_fetch_assoc($looksAfterResult))){
                 echo '<p class="center"> Error: Patient is already assigned to this doctor. </div>';
             } else{

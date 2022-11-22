@@ -17,6 +17,8 @@
     if (!$doctorResult || !$patientResult) {
         die("databases queries failed.");
     }
+
+    //create two-part form where user selects a doctor and a patient to be assigned to each other
     echo "Doctor:";
     echo '<fieldset id="doctors">';
     while ($row = mysqli_fetch_assoc($doctorResult)) {

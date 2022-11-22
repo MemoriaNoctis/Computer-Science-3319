@@ -25,6 +25,8 @@
         <?php
             $whichSpeciality = $_POST["speciality"];
             $query = 'SELECT * FROM doctor WHERE speciality = "' . $whichSpeciality . '"';
+
+            //put query results in a table
             
             $result=mysqli_query($connection,$query);
             if (!$result) {

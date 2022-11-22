@@ -30,6 +30,8 @@
             if (!$result) {
                 die("database query failed.");
             }
+
+            //create table to display all patients
             
             echo '<table>
             <tr>
